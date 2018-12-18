@@ -2,7 +2,7 @@
   Workfow to download and execute a SSL Test connexion
   @author kuisatahverat
  **/
-env.targetHost = targetHost
+env.targetHost = targetHost  
 node () {
   stage ('Env'){
     sh 'export'
@@ -12,7 +12,7 @@ node () {
     git 'https://github.com/kuisathaverat/TestSSLServer.git'
   }
   stage ('Compile sources'){
-    //tool name: 'maven3', type: 'hudson.tasks.Maven$MavenInstallation'
+    tool name: 'maven3', type: 'hudson.tasks.Maven$MavenInstallation'
     sh 'mvn clean compile'
   }
   stage ('Execute Test SSL support features'){
